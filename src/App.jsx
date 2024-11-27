@@ -33,8 +33,13 @@ function App() {
                     />
                     <button id={"ShortenButton"} type={"submit"}>Kısalt</button>
                 </form>
+            {shortenedUrl.length > 0 ? <span id={"ShortenedURLCopy"} onTouchStart={() => {
+                navigator.clipboard.writeText(shortenedUrl)
+            }} onClick={() => {
+                navigator.clipboard.writeText(shortenedUrl)
+            }}>Kopyalamak için tıkla: {shortenedUrl}</span> : null}
             </div>
-            <span id={"ShortenedURLCopy"} onTouchStart={() =>{navigator.clipboard.writeText(shortenedUrl)}} onClick={() =>{navigator.clipboard.writeText(shortenedUrl)}}>{shortenedUrl}</span>
+
         </>
     )
 }
