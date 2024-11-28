@@ -54,10 +54,11 @@ CREATE DATABASE url_shortener;
 \c url_shortener
 
 CREATE TABLE urls (
-    id SERIAL PRIMARY KEY,
-    short_url VARCHAR(255) UNIQUE NOT NULL,
-    long_url TEXT NOT NULL,
-    expires_at TIMESTAMP
+                      id SERIAL PRIMARY KEY,
+                      short_url VARCHAR(8) UNIQUE NOT NULL,
+                      zero_width_url VARCHAR(255) UNIQUE NOT NULL,
+                      long_url TEXT NOT NULL,
+                      expires_at TIMESTAMP
 );
 ```
 
